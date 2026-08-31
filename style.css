@@ -3,9 +3,8 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Quicksand', sans-serif; /* Font chữ nét tròn xinh xắn */
-    background-color: #ffdde1; /* Màu nền hồng đào */
-    /* Tạo nền họa tiết mèo và trái tim chìm */
+    font-family: 'Quicksand', sans-serif;
+    background-color: #ffdde1;
     background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="90" height="90"><text x="15" y="35" font-size="25" opacity="0.3">🐱</text><text x="60" y="75" font-size="25" opacity="0.3">💖</text></svg>');
     display: flex;
     justify-content: center;
@@ -15,7 +14,8 @@ body {
     position: relative;
 }
 
-.container {
+/* Định dạng chung cho các khung màn hình */
+.container, #success-screen, #transition-screen {
     background-color: rgba(255, 255, 255, 0.95);
     padding: 30px;
     border-radius: 25px;
@@ -28,8 +28,18 @@ body {
     border: 3px solid #ffb6c1;
 }
 
+#success-screen {
+    display: none;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+#transition-screen {
+    display: none; /* Ẩn màn hình đệm lúc đầu */
+}
+
 h1 {
-    font-family: 'Baloo 2', cursive; /* Font tiêu đề mập mạp, cute */
+    font-family: 'Baloo 2', cursive;
     color: #e91e63;
     font-size: 28px;
     margin-bottom: 15px;
@@ -87,21 +97,6 @@ button {
     position: relative;
 }
 
-#success-screen {
-    display: none;
-    background-color: rgba(255, 255, 255, 0.95);
-    padding: 30px;
-    border-radius: 25px;
-    box-shadow: 0 15px 35px rgba(255, 105, 135, 0.2);
-    text-align: center;
-    max-width: 400px;
-    width: 90%;
-    max-height: 90vh;
-    overflow-y: auto;
-    z-index: 10;
-    border: 3px solid #ffb6c1;
-}
-
 .couple-images {
     display: flex;
     flex-direction: column;
@@ -125,7 +120,7 @@ button {
     border: 1px dashed #ffb6c1;
 }
 
-/* --- ANIMATION: ICON KHÓC & TRÁI TIM VỠ CHUYỂN ĐỘNG --- */
+/* Hiệu ứng Icon bay */
 .floating-icons {
     position: absolute;
     top: 0;
@@ -148,7 +143,7 @@ button {
     100% { transform: translateY(-10vh) rotate(360deg); opacity: 0; }
 }
 
-/* --- ANIMATION: MƯA TRÁI TIM --- */
+/* Hiệu ứng Mưa trái tim */
 .rain-container {
     position: absolute;
     top: 0;
